@@ -165,7 +165,7 @@ for path in solution:
     print("%s %s" % (path.get_x(), path.get_y()))
 
 window = Tk()
-window.title("Inteligência Artificial - Objetiva")
+window.title("Inteligência Artificial - Simples")
 window.geometry('500x400')
 
 label_matrix = [[None, None, None, None],
