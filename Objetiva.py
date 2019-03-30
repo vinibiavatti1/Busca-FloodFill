@@ -46,9 +46,10 @@ def generate_map():
     for i in range(4):
         for j in range(4):
             if i == 0 and j == 0:
+                map[i][j] = 0
                 continue
-            if random.randint(0, 2) == 1:
-                map[i][j] = random.randint(0, 2)
+            if random.randint(0, 1) == 1:
+                map[i][j] = random.randint(0, 1)
             else:
                 map[i][j] = 0
     return map
@@ -61,9 +62,9 @@ map = generate_map()
 
 #Mapa Manual
 #map = [[0,0,0,0],
-#       [0,0,0,0],
-#       [0,0,0,0],
-#       [0,0,0,0]]
+#       [1,0,0,1],
+#       [0,1,0,0],
+#       [0,0,0,1]]
 
 process_map = deepcopy(map)
 window_map = deepcopy(map)
@@ -204,6 +205,8 @@ def run():
 #
 # Algoritmo
 #
+print("Mapa")
+print_matrix(map)
 while (not map_clean()):
     path = floodfill()
     x = path.get_x()
@@ -215,11 +218,14 @@ while (not map_clean()):
         path = path.get_parent()
     aux_list.reverse()
     solution.extend(aux_list)
-    print_matrix(map)
+    #print_matrix(map)
     map[x][y] = 0
     list = [Node(x, y)]
     process_map = deepcopy(map)
 
+# Mostrar Solução
+print("")
+print("Solução")
 for path in solution:
     print("%s %s" % (path.get_x(), path.get_y()))
 

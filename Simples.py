@@ -46,9 +46,10 @@ def generate_map():
     for i in range(4):
         for j in range(4):
             if i == 0 and j == 0:
+                map[i][j] = 0
                 continue
-            if random.randint(0, 2) == 1:
-                map[i][j] = random.randint(0, 2)
+            if random.randint(0, 1) == 1:
+                map[i][j] = random.randint(0, 1)
             else:
                 map[i][j] = 0
     return map
@@ -161,6 +162,12 @@ def run():
 #
 # Algoritmo
 #
+print("Mapa")
+print_matrix(map)
+
+# Mostrar Solução
+print("")
+print("Solução")
 for path in solution:
     print("%s %s" % (path.get_x(), path.get_y()))
 
