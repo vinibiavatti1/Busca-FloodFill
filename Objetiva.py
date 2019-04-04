@@ -7,6 +7,20 @@
 # Vinícius Reif Biavatti
 # Bryan Leite
 
+# Respostas
+# 1. A sua solução é extensível para um mundo 3 x 3? E para um mundo 6 x 6? Explique sua
+# resposta
+#
+# Sim, só é necessária a alteração do código para considerar um tamanho dinâmico de mapa. A
+# lógica de floodfill funciona para tamanhos diferentes de matriz.
+#
+# 2. É possível ter todo o espaço limpo efetivamente? Justifique sua resposta.
+# 
+# Sim, pois o algoritmo Objetivo não encerra sua busca até que todos o espaço esteja limpo. 
+# A rotina que trata este tipo de ação é while(!map_clean()) {...}
+# Na lógica objetiva, o agente não precisa passar por todos os espaços para garantir que object
+# ambiente esteja limpo, porém na simples, este procedimento é necessário. 
+
 # Importações
 from tkinter import *
 from copy import copy, deepcopy
