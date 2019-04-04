@@ -6,7 +6,7 @@
 # Alunos:
 # Vinícius Reif Biavatti
 # Bryan Leite
-
+#
 # Respostas
 # 1. A sua solução é extensível para um mundo 3 x 3? E para um mundo 6 x 6? Explique sua
 # resposta
@@ -219,7 +219,7 @@ def has_position(x, y):
 def floodfill():
 
     # Interação pela pilha até encontrar uma sugeira, ou percorrer a matriz por
-	# inteiro
+    # inteiro
     while (len(list) != 0):
         node = list.pop(0)
         x = node.get_x()
@@ -321,33 +321,33 @@ while (not map_clean()):
     x = path.get_x()
     y = path.get_y()
 	
-	# Lista auxiliar utilizada somente para armazenar a solução e e reverter
+    # Lista auxiliar utilizada somente para armazenar a solução e e reverter
     aux_list = []
 	
-	# Interação pelo caminho de nós até chegar na posição inicial (posição do agente)
+    # Interação pelo caminho de nós até chegar na posição inicial (posição do agente)
     while (path.get_parent() is not None):
-		# Destaca a posição na matriz para finds de depuração
+        # Destaca a posição na matriz para finds de depuração
         process_map[path.get_x()][path.get_y()] = 3
 		
-		# Incluir posição na lista auxiliar
+        # Incluir posição na lista auxiliar
         aux_list.append(path)
 		
-		# Obter pai
+        # Obter pai
         path = path.get_parent()
 		
-	# Reverter lista para adicionar na lista de solução na ordem correta
+    # Reverter lista para adicionar na lista de solução na ordem correta
     aux_list.reverse()
 	
-	# Adiciona na lista de solução
+    # Adiciona na lista de solução
     solution.extend(aux_list)
 	
-	# Lista a sugeira
+    # Lista a sugeira
     map[x][y] = 0
 	
-	# Atribuir a posição nova do agente na pilha de nós
+    # Atribuir a posição nova do agente na pilha de nós
     list = [Node(x, y)]
 	
-	# Copia o mapa novamente com a sugeira limpa para executar o próximo processamento
+    # Copia o mapa novamente com a sugeira limpa para executar o próximo processamento
     process_map = deepcopy(map)
 
 # Mostrar Solução no console
